@@ -7,7 +7,7 @@ public class CharacterData : MonoBehaviour {
 	public int  id,
 				role,
 				actRole,
-				belonging,
+				team,
 				personality,
 				avatar,
 				eatenTurn,
