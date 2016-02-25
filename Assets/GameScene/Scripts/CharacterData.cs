@@ -17,7 +17,10 @@ public class CharacterData : MonoBehaviour {
 				fortuneResult,
 				fakeFortuneResult;
 
-	public void SetCharaData (string csvData) {
+	CharacterViewController characterController;
+
+	public void SetCharaData (string[] data) {
+		id = int.Parse(data[1]);
 
 	}
 }
