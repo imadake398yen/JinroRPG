@@ -33,22 +33,29 @@ public class GameManager : MonoBehaviour {
 			GameObject.Destroy(this.gameObject);
 		}
 	}
+
+	void Start () {
+		SetAllCharacterData();
+	}
 	
 	public List<CharacterData> character = new List<CharacterData>();
 	Dictionary<int, CharacterData> characterDictionary = new Dictionary<int, CharacterData>();
 
-	public void SetAllCharacterData (string csvData) {
-		charactersCSV = Resources.Load("characters") as TextAsset;
-		avatarCSV = Resources.Load("avatar") as TextAsset;
-		jobCSV = Resources.Load("job") as TextAsset;
-		modeCSV = Resources.Load("mode") as TextAsset;
-		personalityCSV = Resources.Load("personality") as TextAsset;
-		stageCSV = Resources.Load("stage") as TextAsset;
-		teamCSV = Resources.Load("team") as TextAsset;
-		weakModeCSV = Resources.Load("weakMode") as TextAsset;
-		workModeCSV = Resources.Load("workMode") as TextAsset;
+	public void SetAllCharacterData () {
+		charactersCSV = Resources.Load("CSV/characters") as TextAsset;
 
+		avatarCSV = Resources.Load("CSV/avatar") as TextAsset;
+		jobCSV = Resources.Load("CSV/job") as TextAsset;
+		modeCSV = Resources.Load("CSV/mode") as TextAsset;
+		personalityCSV = Resources.Load("CSV/personality") as TextAsset;
+		stageCSV = Resources.Load("CSV/stage") as TextAsset;
+		teamCSV = Resources.Load("CSV/team") as TextAsset;
+		weakModeCSV = Resources.Load("CSV/weakMode") as TextAsset;
+		workModeCSV = Resources.Load("CSV/workMode") as TextAsset;
+
+		print (charactersCSV.text);
 		characterDataBase = CSVReader.SplitCsvGrid(charactersCSV.text);
+		
 		avatarDataBase = CSVReader.SplitCsvGrid(avatarCSV.text);
 		jobDataBase = CSVReader.SplitCsvGrid(jobCSV.text);
 		modeDataBase = CSVReader.SplitCsvGrid(modeCSV.text);

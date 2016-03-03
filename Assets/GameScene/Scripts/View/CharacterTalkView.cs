@@ -7,6 +7,7 @@ public class CharacterTalkView : MonoBehaviour {
 	private Text nameLabel, contentLabel;
 
 	public void UpdateTextView (string name, string talk) {
+
 		if (contentLabel == null) GetReference();
 		nameLabel.text = name;
 		StartCoroutine(SetText(contentLabel, talk));

@@ -22,10 +22,9 @@ public class StageManager : MonoBehaviour {
 	}
 	
 	public string[] GetRaw (int rowNum) {
-		string[] data = new string[ characterDataBase.GetLength(1) ];
-		for (int i=0; i<characterDataBase.GetLength(1); i++){
-			data[i] = characterDataBase[rowNum, i];
-			print(data[i]);
+		string[] data = new string[ characterDataBase.GetLength(0) ];
+		for (int i=0; i<characterDataBase.GetLength(0); i++){
+			data[i] = characterDataBase[i, rowNum];
 		}
 		return data;
 	}
