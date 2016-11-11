@@ -29,7 +29,7 @@ public class CharacterViewController : MonoBehaviour {
 			//int num = int.Parse(other.gameObject.name.Substring(0,1));
 			characterCamera.enabled = true;
 			print(talkView);
-			talkView.UpdateTextView(data.name, data.talks[0,0]);
+			talkView.UpdateTextView(data.name, data.talks[StageManager.instance.day -1,0]);
 
 		}
 	}

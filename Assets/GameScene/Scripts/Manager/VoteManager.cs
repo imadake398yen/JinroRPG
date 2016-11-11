@@ -9,6 +9,7 @@ public class VoteManager : MonoBehaviour {
 		for (int i=0; i<StageManager.instance.characters.Count; i++) {
 			voteControllers[i].UpdateValue(StageManager.instance.characters[i].data);
 		}
+		StageManager.instance.NextDay();
 	}
 	
 }

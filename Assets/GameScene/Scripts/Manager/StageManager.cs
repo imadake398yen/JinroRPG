@@ -6,7 +6,7 @@ public class StageManager : MonoBehaviour {
 
 	public static StageManager instance;
 
-	int day;
+	public int day = 1;
 	[SerializeField]
 	public List<CharacterViewController> characters = new List<CharacterViewController>();
 	string[,] characterDataBase;

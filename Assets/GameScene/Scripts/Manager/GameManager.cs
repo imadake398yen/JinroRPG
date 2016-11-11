@@ -42,6 +42,12 @@ public class GameManager : MonoBehaviour {
 		SetAllCharacterData();
 		//SetAllWordData();
 	}
+
+	void Update () {
+		if (Input.GetKeyUp("q")) {
+			ShowVoteDialog();
+		}
+	}
 	
 	public List<CharacterData> character = new List<CharacterData>();
 	Dictionary<int, CharacterData> characterDictionary = new Dictionary<int, CharacterData>();
@@ -109,8 +115,13 @@ public class GameManager : MonoBehaviour {
 		return this.workModeDataBase;
 	}
 
+	//投票ダイアログの表示
 	public void ShowVoteDialog () {
-		voteCharacterView.SetActive(true);
+		if (voteCharacterView.active == false) {
+			voteCharacterView.SetActive(true);
+		} else {
+			voteCharacterView.SetActive(false);
+		}
 	}
 
 	//改行
