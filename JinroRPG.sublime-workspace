@@ -1,0 +1,797 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chara",
+				"charaPos	Transform[]"
+			],
+			[
+				"CharacterV",
+				"CharacterViewController	CharacterViewController"
+			],
+			[
+				"ch",
+				"charaPos	Transform[]"
+			],
+			[
+				"Vec",
+				"Vector3	Vector3"
+			],
+			[
+				"Game",
+				"GameObject	GameObject"
+			],
+			[
+				"fortune",
+				"fortuneTurn	int"
+			],
+			[
+				"st",
+				"string	string"
+			],
+			[
+				"S",
+				"SerializeField	SerializeField"
+			],
+			[
+				"lo",
+				"Log(object message)	void"
+			],
+			[
+				"Unitye",
+				"UnityEngine	UnityEngine"
+			],
+			[
+				"Cha",
+				"CharacterData()	CharacterData()"
+			],
+			[
+				"charac",
+				"charactersCSV	TextAsset"
+			],
+			[
+				"for",
+				"for	for"
+			],
+			[
+				"Charac",
+				"CharacterViewController	CharacterViewController"
+			],
+			[
+				"character",
+				"characterDataBase	string[,]"
+			],
+			[
+				"Chara",
+				"CharacterData	CharacterData"
+			],
+			[
+				"per",
+				"personalityCSV	TextAsset"
+			],
+			[
+				"work",
+				"workModeCSV	TextAsset"
+			],
+			[
+				"weak",
+				"weakModeCSV	TextAsset"
+			],
+			[
+				"team",
+				"teamCSV	TextAsset"
+			],
+			[
+				"stage",
+				"stageCSV	TextAsset"
+			],
+			[
+				"mode",
+				"modeCSV	TextAsset"
+			],
+			[
+				"job",
+				"jobCSV	TextAsset"
+			],
+			[
+				"avatar",
+				"avatarCSV	TextAsset"
+			],
+			[
+				"ava",
+				"avatarCSV	TextAsset"
+			],
+			[
+				"sp",
+				"SplitCsvGrid(string csvText)	string[,]"
+			],
+			[
+				"UnityE",
+				"UnityEngine	UnityEngine"
+			],
+			[
+				"wo",
+				"workModeDataBase	string[,]"
+			],
+			[
+				"gam",
+				"GameManager	GameManager"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Assets/GameScene/Scripts/Controller/CharacterViewController.cs",
+			"settings":
+			{
+				"buffer_size": 937,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/GameScene/Scripts/View/CharacterTalkView.cs",
+			"settings":
+			{
+				"buffer_size": 700,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/GameScene/Scripts/CharacterData.cs",
+			"settings":
+			{
+				"buffer_size": 987,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "using UnityEngine;\nusing System.Collections;\nusing System.Collections.Generic;\n\npublic class Test : MonoBehaviour {\n\n	public int column = 0;\n	public string[] characterRawData;\n\n	public CharacterViewController[] characters = new CharacterViewController[3];\n\n	public string[,] arrayTest = new string[3,3]{\n		{\"佐藤\",\"田中\",\"鈴木\"},\n		{\"高橋\",\"竹田\",\"安川\"},\n		{\"高橋\",\"竹田\",\"安川\"}\n	};\n\n\n	void Start () {\n		GetRaw(column);\n		characterRawData = GetRaw(column);\n		for ( int i=0; i<characters.Length; i++ ) {\n			characters[i].data.SetCharaData(GetRaw(i));\n		}\n	}\n	// Use this for initialization\n	private string[] GetRaw (int rowNumber) {\n		string[] data = new string[arrayTest.GetLength(1)];\n		for (int i=0; i<arrayTest.GetLength(1); i++){\n			data[i] = arrayTest[rowNumber,i];\n		}\n		return data;\n	}\n	\n	// Update is called once per frame\n	void Update () {\n	\n	}\n}\n",
+			"file": "Assets/GameScene/Scripts/Test/Test.cs",
+			"file_size": 673,
+			"file_write_time": 131008695520000000,
+			"settings":
+			{
+				"buffer_size": 840,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/GameScene/Scripts/Manager/GameManager.cs",
+			"settings":
+			{
+				"buffer_size": 3066,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/GameScene/Scripts/StageManager.cs",
+			"settings":
+			{
+				"buffer_size": 1027,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "unity",
+		"selected_items":
+		[
+			[
+				"unity",
+				"Set Syntax: Unity C#"
+			],
+			[
+				"om",
+				"OmniSharpSublime: Build"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/MINAMI/Documents/JinroRPG",
+		"/Users/MINAMI/Documents/JinroRPG/Assets",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/Resources"
+	],
+	"file_history":
+	[
+		"/Users/MINAMI/Documents/JinroRPG/Assets/GameScene/Scripts/CharacterController.cs",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/Scripts/Manager/GameManager.cs",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/Scripts/TypeWritter.cs",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/GameScene/Scripts/CharacterCameraController.cs",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/GameScene/Scripts/Controller/CharacterCameraController.cs",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/GameScene/Scripts/CharacterTalkView.cs",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/GameScene/Scripts/Controller/CharacterController.cs",
+		"/Users/MINAMI/Documents/JinroRPG/Assets/Scripts/CSVReader.cs",
+		"/Users/MINAMI/Documents/JinroRPG/JinroRPG.sublime-project"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"avatar"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/GameScene/Scripts/Controller/CharacterViewController.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 937,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"140,155": "Name should have prefix '_'. (Rule 'Fields').",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"197,201": "Name should have prefix '_'. (Rule 'Fields').",
+								"251,259": "Name should have prefix '_'. (Rule 'Fields').",
+								"279,285": "Name should have prefix '_'. (Rule 'Fields').",
+								"355,365": "Use 'var' keyword",
+								"420,428": "Redundant ToString() call",
+								"45,50": "Using directive is not used by code and can be removed safely.",
+								"468,471": "Using member of null value will cause a NullReferenceException",
+								"502,506": "'this.' is redundant and can be removed safely.",
+								"584,592": "Parameter can be declared with base type",
+								"654,655": "Assignment is redundant",
+								"770,778": "Parameter can be declared with base type",
+								"840,841": "Assignment is redundant"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/GameScene/Scripts/View/CharacterTalkView.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								156,
+								156
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"194,198": "Parameter can be IComparable"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/GameScene/Scripts/CharacterData.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"103,107": "Name should have prefix '_'. (Rule 'Fields').",
+								"113,120": "Name should have prefix '_'. (Rule 'Fields').",
+								"126,130": "Name should have prefix '_'. (Rule 'Fields').",
+								"136,147": "Name should have prefix '_'. (Rule 'Fields').",
+								"153,161": "Name should have prefix '_'. (Rule 'Fields').",
+								"167,176": "Name should have prefix '_'. (Rule 'Fields').",
+								"182,193": "Name should have prefix '_'. (Rule 'Fields').",
+								"199,208": "Name should have prefix '_'. (Rule 'Fields').",
+								"214,229": "Name should have prefix '_'. (Rule 'Fields').",
+								"235,248": "Name should have prefix '_'. (Rule 'Fields').",
+								"254,271": "Name should have prefix '_'. (Rule 'Fields').",
+								"286,292": "Name should have prefix '_'. (Rule 'Fields').",
+								"327,346": "The private field 'characterController' is never assigned",
+								"385,389": "Parameter can be IList",
+								"76,80": "Name should have prefix '_'. (Rule 'Fields').",
+								"95,97": "Name should have prefix '_'. (Rule 'Fields').",
+								"960,961": "Comparison with 'false' is redundant"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/GameScene/Scripts/Test/Test.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Assets/GameScene/Scripts/Manager/GameManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1506,
+								1506
+							]
+						],
+						"settings":
+						{
+							"oops":
+							{
+								"151,159": "Name should have prefix '_'. (Rule 'Fields').",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"2108,2112": "'this.' is redundant and can be removed safely.",
+								"2186,2190": "'this.' is redundant and can be removed safely.",
+								"2258,2262": "'this.' is redundant and can be removed safely.",
+								"2328,2332": "'this.' is redundant and can be removed safely.",
+								"2406,2410": "'this.' is redundant and can be removed safely.",
+								"2485,2489": "'this.' is redundant and can be removed safely.",
+								"2557,2561": "'this.' is redundant and can be removed safely.",
+								"2632,2636": "'this.' is redundant and can be removed safely.",
+								"2711,2715": "'this.' is redundant and can be removed safely.",
+								"2961,2972": "Method 'ChangeScene' can be made static.",
+								"631,641": "Static method invoked via derived type",
+								"660,664": "'this.' is redundant and can be removed safely.",
+								"690,700": "Static method invoked via derived type",
+								"709,713": "'this.' is redundant and can be removed safely.",
+								"810,819": "Name should have prefix '_'. (Rule 'Fields')."
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 485.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Assets/GameScene/Scripts/StageManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								687,
+								687
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"187,197": "The private field 'characters' is never assigned",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"249,257": "Name should have prefix '_'. (Rule 'Fields').",
+								"45,50": "Using directive is not used by code and can be removed safely.",
+								"788,794": "Parameter can be IComparable",
+								"800,806": "Use 'var' keyword"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 57.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "Assets/GameScene/Scripts/CharacterData.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"103,107": "Name should have prefix '_'. (Rule 'Fields').",
+								"113,120": "Name should have prefix '_'. (Rule 'Fields').",
+								"126,130": "Name should have prefix '_'. (Rule 'Fields').",
+								"136,147": "Name should have prefix '_'. (Rule 'Fields').",
+								"153,161": "Name should have prefix '_'. (Rule 'Fields').",
+								"167,176": "Name should have prefix '_'. (Rule 'Fields').",
+								"182,193": "Name should have prefix '_'. (Rule 'Fields').",
+								"199,208": "Name should have prefix '_'. (Rule 'Fields').",
+								"214,229": "Name should have prefix '_'. (Rule 'Fields').",
+								"235,248": "Name should have prefix '_'. (Rule 'Fields').",
+								"254,271": "Name should have prefix '_'. (Rule 'Fields').",
+								"286,292": "Name should have prefix '_'. (Rule 'Fields').",
+								"327,346": "The private field 'characterController' is never assigned",
+								"385,389": "Parameter can be IList",
+								"76,80": "Name should have prefix '_'. (Rule 'Fields').",
+								"95,97": "Name should have prefix '_'. (Rule 'Fields').",
+								"960,961": "Comparison with 'false' is redundant"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Assets/GameScene/Scripts/StageManager.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								687,
+								687
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"oops":
+							{
+								"187,197": "The private field 'characters' is never assigned",
+								"19,24": "Using directive is not used by code and can be removed safely.",
+								"249,257": "Name should have prefix '_'. (Rule 'Fields').",
+								"45,50": "Using directive is not used by code and can be removed safely.",
+								"788,794": "Parameter can be IComparable",
+								"800,806": "Use 'var' keyword"
+							},
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 69.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "JinroRPG.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"stage",
+				"Assets/GameScene/Scripts/StageManager.cs"
+			],
+			[
+				"charactervie",
+				"Assets/GameScene/Scripts/Controller/CharacterViewController.cs"
+			],
+			[
+				"chara",
+				"Assets/GameScene/Scripts/CharacterData.cs"
+			],
+			[
+				"charactercontrol",
+				"Assets/GameScene/Scripts/CharacterController.cs"
+			],
+			[
+				"charactertalk",
+				"Assets/GameScene/Scripts/View/CharacterTalkView.cs"
+			],
+			[
+				"game",
+				"Assets/GameScene/Scripts/Manager/GameManager.cs"
+			],
+			[
+				"gamema",
+				"Assets/GameScene/Scripts/Manager/GameManager.cs"
+			],
+			[
+				"characterviewc",
+				"Assets/GameScene/Scripts/Controller/CharacterViewController.cs"
+			],
+			[
+				"test",
+				"Assets/GameScene/Scripts/Test/Test.cs"
+			],
+			[
+				"charac",
+				"Assets/GameScene/Scripts/CharacterData.cs"
+			],
+			[
+				"charactercon",
+				"Assets/GameScene/Scripts/Controller/CharacterViewController.cs"
+			],
+			[
+				"camerac",
+				"Assets/GameScene/Scripts/Controller/CharacterCameraController.cs"
+			],
+			[
+				"charactercontro",
+				"Assets/GameScene/Scripts/Controller/CharacterController.cs"
+			],
+			[
+				"stagema",
+				"Assets/GameScene/Scripts/StageManager.cs"
+			],
+			[
+				"charactercont",
+				"Assets/GameScene/Scripts/CharacterController.cs"
+			],
+			[
+				"characterd",
+				"Assets/GameScene/Scripts/CharacterData.cs"
+			],
+			[
+				"typ",
+				"Assets/Scripts/TypeWritter.cs"
+			],
+			[
+				"csvrea",
+				"Assets/Scripts/CSVReader.cs"
+			],
+			[
+				"characterda",
+				"Assets/GameScene/Scripts/CharacterData.cs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
