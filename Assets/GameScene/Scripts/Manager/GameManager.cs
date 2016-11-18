@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyUp("q")) {
 			ShowVoteDialog();
+		} else if (Input.GetKeyUp(KeyCode.Escape)) {
+			RemoveVoteDialog();
 		}
 	}
 	
@@ -119,7 +121,11 @@ public class GameManager : MonoBehaviour {
 	public void ShowVoteDialog () {
 		if (voteCharacterView.active == false) {
 			voteCharacterView.SetActive(true);
-		} else {
+		}
+	}
+
+	public void RemoveVoteDialog () {
+		if (voteCharacterView.active == true) {
 			voteCharacterView.SetActive(false);
 		}
 	}

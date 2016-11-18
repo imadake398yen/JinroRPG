@@ -25,6 +25,7 @@ public class CharacterData {
 		fakeFortuneResult;
 	public bool isLive = true;
 	public string[,] talks;
+	public Image characterImage;
 
 	CharacterViewController characterController;
 
