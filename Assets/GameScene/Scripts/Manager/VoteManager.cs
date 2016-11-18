@@ -8,12 +8,12 @@ public class VoteManager : SingletonMonoBehaviour<VoteManager> {
 	private void Left () {
 		if (selector == 0) {
 			selector = voteControllers.Length - 1;
-		}
+		} else selector -= 1;
 	}
 	private void Right () {
 		if (selector == voteControllers.Length - 1) {
 			selector = 0;
-		}
+		} else selector += 1;
 	}
 	private void Update () {
 		if (Input.GetKeyDown("right")) Right();
