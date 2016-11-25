@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -6,12 +6,16 @@ public class VoteController : MonoBehaviour {
 	VoteCharacterView[] voteCharacters;
 
 	public Text
-		nameText, actorText;
-	public Image faceImage;
+		nameText, 
+		actorText;
+	public Image 
+		faceImage,
+		selectImage;
 
 	[HideInInspector]
 	public CharacterData data;
 
+	//VoteCharacterViewに情報を貼り付ける
 	public void UpdateValue (CharacterData d) {
 		print(data.name);
 		data = d;
