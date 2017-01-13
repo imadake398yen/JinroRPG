@@ -31,11 +31,10 @@ public class StageManager : MonoBehaviour {
 			//クラス		  インスタンス
 			CharacterData d = new CharacterData();
 			d.SetCharaData(GetRaw(i));
-			print(d.avatarId);
+			// print(d.avatarId);
 			GameObject obj = Instantiate(Resources.Load("Character/" 
 				+ d.avatarId.ToString())) as GameObject;
 			//位置を指定
-			print(i);
 			obj.transform.position = charaPos[i].position;
 			characters.Add(obj.GetComponent<CharacterViewController>());
 			//オブジェクトのCharacterViewControllerに今作ったdを入れる

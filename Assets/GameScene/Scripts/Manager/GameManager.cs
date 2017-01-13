@@ -46,9 +46,16 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyUp("q")) {
 			ShowVoteDialog();
-		} else if (Input.GetKeyUp(KeyCode.Escape)) {
-			RemoveVoteDialog();
+			if (PlayerViewController.instance != null) {
+				PlayerViewController.instance.FreezePlayer();
+			}
 		}
+		/*else if (Input.GetKeyUp(KeyCode.Escape)) {
+			RemoveVoteDialog();
+			if (PlayerViewController.instance != null) {
+				PlayerViewController.instance.MovePlayer();
+			}
+		}*/
 	}
 	
 	public List<CharacterData> character = new List<CharacterData>();
@@ -121,6 +128,7 @@ public class GameManager : MonoBehaviour {
 	public void ShowVoteDialog () {
 		if (voteCharacterView.active == false) {
 			voteCharacterView.SetActive(true);
+			VoteManager.instance.UpdateVoteControllers();
 		}
 	}
 

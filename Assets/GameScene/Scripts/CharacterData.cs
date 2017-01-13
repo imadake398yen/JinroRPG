@@ -25,7 +25,6 @@ public class CharacterData {
 		fakeFortuneResult;
 	public bool isLive = true;
 	public string[,] talks;
-	public Image characterImage;
 
 	CharacterViewController characterController;
 
@@ -35,7 +34,7 @@ public class CharacterData {
 		foreach (string d in data) {
 			da += ( d + ", " );
 		}
-		UnityEngine.Debug.Log(da);
+		// UnityEngine.Debug.Log(da);
 		id = int.Parse(data[1]);
 		name = data[2];
 		role = int.Parse(data[3]);

@@ -29,7 +29,9 @@ public class CharacterViewController : MonoBehaviour {
 			//int num = int.Parse(other.gameObject.name.Substring(0,1));
 			characterCamera.enabled = true;
 			print(talkView);
-			talkView.UpdateTextView(data.name, data.talks[StageManager.instance.day -1,0]);
+			//UpdateTextの呼び出し
+			//CSVの列のセット
+			talkView.UpdateTextView(data.name, data.talks[0,StageManager.instance.day -1]);
 
 		}
 	}

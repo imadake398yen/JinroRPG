@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -6,6 +6,7 @@ public class CharacterTalkView : MonoBehaviour {
 
 	private Text nameLabel, contentLabel;
 
+	//CharacterViewControllerで呼び出し
 	public void UpdateTextView (string name, string talk) {
 		if (contentLabel == null) Initialize();
 		nameLabel.text = name;
@@ -19,6 +20,7 @@ public class CharacterTalkView : MonoBehaviour {
 		}
 	}
 
+	//Labelの関連付け
 	private void Initialize () {
 		nameLabel = transform.FindChild("Canvas/Panel/name").GetComponent<Text>();
 		contentLabel = transform.FindChild("Canvas/Panel/talk").GetComponent<Text>();

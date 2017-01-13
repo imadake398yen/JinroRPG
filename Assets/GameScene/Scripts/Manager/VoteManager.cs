@@ -6,6 +6,8 @@ public class VoteManager : SingletonMonoBehaviour<VoteManager> {
 
 	public int selector = 0;
 	public GameObject voteControllerPrefab;
+	public List<VoteController> voteControllers = new List<VoteController>();
+	public GameObject log;
 
 	private void Left () {
 		if (voteControllers.Count > 0) {
@@ -23,9 +25,21 @@ public class VoteManager : SingletonMonoBehaviour<VoteManager> {
 			UpdateSelector();
 		}
 	}
+
+	private void Vote () {
+		if(voteControllers[selector].data.isLive == true){
+			print(voteControllers[selector].name);
+			voteControllers[selector].PushSelf();
+			PlayerViewController.instance.MovePlayer();
+		}else {
+			log.SetActive(true);
+		}
+	}
+
 	private void Update () {
 		if (Input.GetKeyDown("right")) Right();
 		if (Input.GetKeyDown("left")) Left();
+		if(Input.GetKeyUp(KeyCode.Return)) Vote();
 	}
 
 
@@ -38,9 +52,6 @@ public class VoteManager : SingletonMonoBehaviour<VoteManager> {
 			}
 		}
 	}
-
-
-	public List<VoteController> voteControllers = new List<VoteController>();
 
 	public void UpdateVoteControllers () {
 

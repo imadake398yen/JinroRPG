@@ -10,30 +10,39 @@ public class VoteController : MonoBehaviour {
 		actorText;
 	public Image 
 		faceImage,
-		selectImage;
+		selectImage,
+		deadImage;
 
-	[HideInInspector]
 	public CharacterData data;
 
 	//VoteCharacterViewに情報を貼り付ける
 	public void UpdateValue (CharacterData d) {
-		print(data.name);
 		data = d;
 		nameText.text = data.name;
 		actorText.text = ((Const.ActRole)data.actRole).ToJapanese();
 		faceImage.sprite = Resources.Load<Sprite>("CharacterImages/" + data.id.ToString());
+		deadImage.gameObject.SetActive(!data.isLive);
 	}
 
 	public void PushSelf () {
-		data.isLive = false;
-		foreach (var chara in StageManager.instance.characters) {
-			if (chara.data.id == data.id) {
-				Destroy(chara.gameObject);
-				break;
-			}
-		}
-		GameManager.instance.voteCharacterView.SetActive(false);
+		if (data.isLive) {
+			data.isLive = false;
+			// foreach (var chara in StageManager.instance.characters) {
+			// 	if (chara.data.id == data.id) {
+			// 		print(data.name);
+			// 		print(chara.gameObject.name);
+			// 		chara.gameObject.SetActive(false);
+			// 		deadImage.enabled = true;
+			// 		break;
+			// 	}
+			// }
+			var chara = StageManager.instance.characters.Find(c => c.data.id == data.id);
+			print(chara.data.name);
+			chara.gameObject.SetActive(false);
+			GameManager.instance.voteCharacterView.SetActive(false);
+		} 
+		else {
 
-		
+		}
 	}
 }
