@@ -49,13 +49,12 @@ public class GameManager : MonoBehaviour {
 			if (PlayerViewController.instance != null) {
 				PlayerViewController.instance.FreezePlayer();
 			}
-		}
-		/*else if (Input.GetKeyUp(KeyCode.Escape)) {
+		}else if (Input.GetKeyUp(KeyCode.Escape)) {
 			RemoveVoteDialog();
 			if (PlayerViewController.instance != null) {
 				PlayerViewController.instance.MovePlayer();
 			}
-		}*/
+		}
 	}
 	
 	public List<CharacterData> character = new List<CharacterData>();

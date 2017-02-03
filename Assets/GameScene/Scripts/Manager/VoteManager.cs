@@ -8,6 +8,7 @@ public class VoteManager : SingletonMonoBehaviour<VoteManager> {
 	public GameObject voteControllerPrefab;
 	public List<VoteController> voteControllers = new List<VoteController>();
 	public GameObject log;
+	public Fade repetitionVotePanel;
 
 	private void Left () {
 		if (voteControllers.Count > 0) {
@@ -33,7 +34,12 @@ public class VoteManager : SingletonMonoBehaviour<VoteManager> {
 			PlayerViewController.instance.MovePlayer();
 		}else {
 			log.SetActive(true);
+			repetitionVotePanel.isFeedin = true;
+			Invoke("fadeOut",2f);
 		}
+	}
+	private void fadeOut () {
+		repetitionVotePanel.isFeedin = false;
 	}
 
 	private void Update () {

@@ -25,24 +25,15 @@ public class VoteController : MonoBehaviour {
 	}
 
 	public void PushSelf () {
+		print(data.isLive);
 		if (data.isLive) {
 			data.isLive = false;
-			// foreach (var chara in StageManager.instance.characters) {
-			// 	if (chara.data.id == data.id) {
-			// 		print(data.name);
-			// 		print(chara.gameObject.name);
-			// 		chara.gameObject.SetActive(false);
-			// 		deadImage.enabled = true;
-			// 		break;
-			// 	}
-			// }
 			var chara = StageManager.instance.characters.Find(c => c.data.id == data.id);
 			print(chara.data.name);
 			chara.gameObject.SetActive(false);
 			GameManager.instance.voteCharacterView.SetActive(false);
 		} 
 		else {
-
 		}
 	}
 }
