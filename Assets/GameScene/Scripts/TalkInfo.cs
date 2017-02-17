@@ -1,7 +1,7 @@
 ﻿[System.SerializableAttribute]
 public class TalkInfo {
 
-	private int 
+	public int 
 		day,
 		companionId;
 
