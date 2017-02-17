@@ -2,9 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class StageManager : MonoBehaviour {
-
-	public static StageManager instance;
+public class StageManager : SingletonMonoBehaviour<StageManager> {
 
 	public int day = 1;
 	[SerializeField]
@@ -13,7 +11,6 @@ public class StageManager : MonoBehaviour {
 	public Transform[] charaPos;
 
 	void Awake () {
-		instance = this;
 		//キャラクターデータベースをGameManagerから取ってきて、配列の大きさを決める
 		characterDataBase = GameManager.instance.GetCharacterDataBase();
 		//characterDataBase = new string[16,7];

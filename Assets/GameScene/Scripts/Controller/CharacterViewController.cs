@@ -32,7 +32,7 @@ public class CharacterViewController : MonoBehaviour {
 			//UpdateTextの呼び出し
 			//CSVの列のセット
 			talkView.UpdateTextView(data.name, data.talks[0,StageManager.instance.day -1]);
-
+			PlayerViewController.instance.NewTalk(data);
 		}
 	}
 
